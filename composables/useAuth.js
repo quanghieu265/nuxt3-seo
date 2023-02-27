@@ -60,6 +60,14 @@ export default () => {
     });
   };
 
+  const logOut = async () => {
+    await useFetchApi("/api/user/logout", {
+      method: "POST"
+    });
+    localStorage.removeItem("auth_user");
+    return navigateTo("/login", { redirectCode: 301 });
+  };
+
   const refreshAccessToken = () => {
     return useFetchApi("/api/user/refresh");
   };
@@ -69,6 +77,7 @@ export default () => {
     useAuthUser,
     signUp,
     refreshAccessToken,
-    setUser
+    setUser,
+    logOut
   };
 };

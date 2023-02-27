@@ -1,8 +1,8 @@
 import jwt_decode from "jwt-decode";
 
 export default defineNuxtRouteMiddleware(async (to, from) => {
-  // // skip middleware on server
-  // if (process.server) return;
+  // skip middleware on server
+  if (process.server) return;
   // skip middleware on login/signup page
   if (to.fullPath === "/login" || to.fullPath === "/signup") return;
   const { useAuthUser } = useAuth();

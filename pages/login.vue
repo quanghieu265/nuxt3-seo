@@ -22,10 +22,6 @@
 </template>
 <script setup>
 import { reactive } from "vue";
-definePageMeta({
-  layout: "custom",
-})
-
 const { openAlert } = useAlert();
 const state = reactive({
   username: "",
@@ -62,5 +58,10 @@ const onSubmit = async () => {
     state.loading = false;
   }
 };
+
+definePageMeta({
+  layout: "custom",
+})
+useDynamicHeader("Login Page", 'Welcome to the Login Page')
 </script>
 <style></style>

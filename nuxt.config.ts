@@ -10,6 +10,7 @@ export default defineNuxtConfig({
     apiSecret: "123",
     // Public keys that are exposed to the client
     public: {
+      baseURL: process.env.NUXT_BASE_URL || "http://localhost:3000/",
       apiBase: process.env.NUXT_PUBLIC_API_BASE_URL || "/api"
     }
   },

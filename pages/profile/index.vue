@@ -29,5 +29,6 @@ async function getProfiles() {
 onMounted(() => {
   getProfiles();
 });
+useDynamicHeader("Profiles Page", 'Welcome to the Profiles Page')
 </script>
 <style></style>

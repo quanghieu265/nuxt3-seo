@@ -7,13 +7,6 @@
 </template>
 
 <script setup>
-// definePageMeta({
-//   validate: async route => {
-//     // Check if the id is made up of digits
-//     return /^\d+$/.test(route.params.id);
-//   }
-// });
-
 const route = useRoute();
 const { getUserById } = useProfiles();
 const state = reactive({ profiles: {} });
@@ -25,6 +18,13 @@ const getProfileById = async id => {
 
 onMounted(() => {
   getProfileById(route.params.id);
+});
+
+definePageMeta({
+  validate: async route => {
+    // Check if the id is made up of digits
+    return /^\d+$/.test(route.params.id);
+  },
 });
 </script>
 

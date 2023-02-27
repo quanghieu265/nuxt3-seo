@@ -25,11 +25,6 @@
 </template>
 <script setup>
 import { reactive } from "vue";
-
-definePageMeta({
-  layout: "custom",
-})
-
 const { openAlert } = useAlert();
 const state = reactive({
   username: "",
@@ -68,5 +63,10 @@ const onSubmit = async () => {
   });
   return navigateTo("/login");
 };
+
+definePageMeta({
+  layout: "custom",
+})
+useDynamicHeader("Sign Up Page", 'Welcome to the Sign Up Page')
 </script>
 <style></style>

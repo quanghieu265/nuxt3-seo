@@ -33,7 +33,6 @@ export default async (url, customOptions = {}) => {
         }
 
         default: {
-          console.log("haha");
           return openAlert({
             type: "error",
             message: request.response._data.message,
